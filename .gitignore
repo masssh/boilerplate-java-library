@@ -2,6 +2,7 @@
 .gradle
 .gradle.user.home
 /build/
+/out/
 
 # Intellij
 .idea/**/workspace.xml
