@@ -23,6 +23,7 @@ configurations {}
 
 dependencies {
     // implementation 'com.google.guava:guava:27.0.1-jre'
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:5.4.1"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.1'
     testImplementation 'org.assertj:assertj-core:3.12.2'
 }
@@ -30,3 +31,7 @@ dependencies {
 allprojects {}
 
 subprojects {}
+
+test {
+    useJUnitPlatform()
+}
