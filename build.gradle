@@ -1,10 +1,9 @@
 buildscript {}
 
 plugins {
-    // id 'java'
+    id "java"
     id "java-library"
-    // id 'application'
-    id 'jacoco'
+    id "jacoco"
 }
 
 repositories {
@@ -14,16 +13,23 @@ repositories {
 configurations {}
 
 dependencies {
-    // implementation 'com.google.guava:guava:27.0.1-jre'
     testRuntime "org.junit.jupiter:junit-jupiter-engine:5.4.1"
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.4.1"
     testImplementation "org.assertj:assertj-core:3.12.2"
-    testImplementation 'org.jacoco:org.jacoco.build:0.8.3'
+    testImplementation "org.jacoco:org.jacoco.build:0.8.3"
 }
 
 allprojects {}
 
 subprojects {}
+
+sourceCompatibility = "11"
+targetCompatibility = "11"
+archivesBaseName = "sample"
+
+wrapper {
+    gradleVersion = "5.6.3"
+}
 
 test {
     useJUnitPlatform()
@@ -33,6 +39,4 @@ jacoco {
     toolVersion = "0.8.3"
 }
 
-wrapper {
-    gradleVersion = '5.6.3'
-}
+

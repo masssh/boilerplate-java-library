@@ -1,0 +1,3 @@
+[submodule "docker-nexus"]
+	path = docker-nexus
+	url = https://github.com/sonatype/docker-nexus
