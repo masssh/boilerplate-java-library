@@ -1,4 +1,4 @@
-package com.example;
+package masssh.boilerplate.library;
 
 public class Sample {
     public int foo() {

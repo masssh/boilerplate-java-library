@@ -7,8 +7,8 @@ plugins {
     id "maven"
 }
 
-final String _groupId = "com.example"
-final String _artifactId = "sample"
+final String _groupId = "masssh"
+final String _artifactId = "gradle-boilerplate-library"
 final String _version = new File(projectDir, "VERSION").getText().trim()
 
 repositories {

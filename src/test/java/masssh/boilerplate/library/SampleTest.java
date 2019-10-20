@@ -1,4 +1,4 @@
-package com.example;
+package masssh.boilerplate.library;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
