@@ -1,2 +1,1 @@
-# gradle-boilerplate
-a boilerplate for gradle project
+# boilerplate-java-library
