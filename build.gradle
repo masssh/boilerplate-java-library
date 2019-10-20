@@ -4,7 +4,12 @@ plugins {
     id "java"
     id "java-library"
     id "jacoco"
+    id "maven"
 }
+
+final String _groupId = "com.example"
+final String _artifactId = "sample"
+final String _version = new File(projectDir, "VERSION").getText().trim()
 
 repositories {
     jcenter()
@@ -25,7 +30,25 @@ subprojects {}
 
 sourceCompatibility = "11"
 targetCompatibility = "11"
-archivesBaseName = "sample"
+archivesBaseName = "$_artifactId-$_version"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://localhost:8081/nexus/content/repositories/releases/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+            snapshotRepository(url: "http://localhost:8081/nexus/content/repositories/snapshots/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+            pom {
+                groupId = _groupId
+                artifactId = _artifactId
+                version = _version
+            }
+        }
+    }
+}
 
 wrapper {
     gradleVersion = "5.6.3"
@@ -38,5 +61,3 @@ test {
 jacoco {
     toolVersion = "0.8.3"
 }
-
-
